@@ -37,6 +37,7 @@ class Signup extends Component {
     const { username, password, email } = this.state;
     return (
       <div className="log-form">
+        <h1 className='title'>TLÖN</h1>
         <form onSubmit={this.handleFormSubmit}>
           <label htmlFor='username'>Username</label>
           <input id='username' type='text' name='username' value={username} onChange={this.handleChange}/>
@@ -48,7 +49,7 @@ class Signup extends Component {
         </form>
 
         <p>Already have account? 
-          <Link to={'/'} className="signup"> Login</Link>
+          <Link to={'/'} className="signup">Login</Link>
         </p>
 
       </div>

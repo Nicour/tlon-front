@@ -4,7 +4,7 @@ class Private extends Component {
     
     return (
       <div>
-        <h1>Welcome Paquito</h1>
+        <h1>Welcome</h1>
       </div>
     )
   }

@@ -14,7 +14,6 @@ class App extends Component {
     return (
       <Router>
         <div className="container">
-          <h1 className='title'>TLÖN</h1>
           <Switch>
             <Route path="/" exact component={Login} />
             <Route path="/signup" exact component={Signup} />

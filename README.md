@@ -144,7 +144,7 @@ Review model
 ```javascript
 {
   message - String,
-  User - [ObjectID<User>]
+  user - [ObjectID<User>]
 }
 ```
 

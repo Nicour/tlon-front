@@ -1,3 +1,16 @@
+
+* {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 6.5rem;
+  color: #191a1b;
+  margin-top: 25px;
+}
+
 .App {
   text-align: center;
 }
@@ -30,4 +43,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.log-form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 90px 20px 0 20px;
+}
+
+.log-form .button {
+  background-color: rgb(23, 30, 48);
+  border: 0.1rem solid rgb(23, 30, 48);
+  margin-top: 20px;
+}
+
+.log-form p {
+  color: #191a1b;
+  font-weight: 400;
+}
+
+.signup {
+  color: #7f39b8;
+  font-weight: 400;
 }

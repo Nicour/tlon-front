@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-import Navbar from './components/Navabr.js';
+// import Navbar from './components/Navabr.js';
 import Private from './pages/Private';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
@@ -14,12 +14,11 @@ class App extends Component {
     return (
       <Router>
         <div className="container">
-          <h1>Basic React Authentication</h1>
-          <Navbar />
+          <h1 className='title'>TLÖN</h1>
           <Switch>
-            <Route path="/signup" component={Signup} />
-            <Route path="/login" component={Login} />
-            <Route path="/private" component={Private} />
+            <Route path="/" exact component={Login} />
+            <Route path="/signup" exact component={Signup} />
+            <Route path="/private" exact component={Private} />
           </Switch>
         </div>
       </Router>

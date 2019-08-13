@@ -28,19 +28,19 @@ class Login extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <>
-        <form onSubmit={this.handleFormSubmit}>
-          <label htmlFor='username' >Username:</label>
+      <div className="log-form">
+        <form onSubmit={this.handleFormSubmit} >
+          <label htmlFor='username' >Username</label>
           <input id='username' type='text' name='username' value={username} onChange={this.handleChange}/>
-          <label htmlFor='password'>Password:</label>
+          <label htmlFor='password'>Password</label>
           <input id='password' type='password' name='password' value={password} onChange={this.handleChange} />
-          <input type='submit' value='Login' />
+          <input type='submit' value='Login' className="button"/>
         </form>
 
         <p>You don't have an accout yet?
-            <Link to={'/signup'}> Signup</Link>
+            <Link to={'/signup'} className="signup"> Signup</Link>
         </p>
-      </>
+      </div>
     )
   }
 }

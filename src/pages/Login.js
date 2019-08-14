@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import auth from '../services/auth-service';
+import withAuth from '../components/withAuth';
 
 class Login extends Component {
   state = {
@@ -12,10 +12,8 @@ class Login extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     const { username, password } = this.state
-
-    auth.login({ username, password })
+    this.props.login({ username, password })
     .then( (user) => {
-      console.log(user)
     })
     .catch( error => console.log(error) )
   }
@@ -31,7 +29,7 @@ class Login extends Component {
       <div className="log-form">
         <h1 className='title'>TLÖN</h1>
         <form onSubmit={this.handleFormSubmit} >
-          <label htmlFor='username' >Username</label>
+          <label htmlFor='username'>Username</label>
           <input id='username' type='text' name='username' value={username} onChange={this.handleChange}/>
           <label htmlFor='password'>Password</label>
           <input id='password' type='password' name='password' value={password} onChange={this.handleChange} />
@@ -46,4 +44,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withAuth(Login);

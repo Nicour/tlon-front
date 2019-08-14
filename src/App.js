@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Switch} from 'react-router-dom';
 
-// import Navbar from './components/Navabr.js';
 import Private from './pages/Private';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+
+import AnonRoute from './components/AnonRoute'
+import PrivateRoute from './components/PrivateRoute'
+
+import AuthProvider from './contexts/auth-context';
 
 import './App.css';
 import 'milligram';
@@ -13,13 +17,15 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="container">
-          <Switch>
-            <Route path="/" exact component={Login} />
-            <Route path="/signup" exact component={Signup} />
-            <Route path="/private" exact component={Private} />
-          </Switch>
-        </div>
+        <AuthProvider>
+          <div className="container">
+            <Switch>
+              <AnonRoute path="/signup" exact component={Signup} />
+              <AnonRoute path="/" exact component={Login} />
+              <PrivateRoute path="/private" exact component={Private} />
+            </Switch>
+          </div>
+        </AuthProvider>
       </Router>
     )
   }

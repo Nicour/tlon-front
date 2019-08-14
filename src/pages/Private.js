@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
+import withAuth from '../components/withAuth.js';
+import Navbar from '../components/Navabr'
+
 class Private extends Component {
   render() {
-    
     return (
       <div>
-        <h1>Welcome</h1>
+        <Navbar pageWrapId={"page-wrap"} outerContainerId={"App"} />
+        <h1>Welcome Jackito</h1>
       </div>
     )
   }
 }
 
-export default Private;
+export default withAuth(Private);

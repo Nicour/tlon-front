@@ -3,7 +3,7 @@ import axios from 'axios';
 class AuthService {
   constructor() {
     this.auth = axios.create({
-      baseURL: 'http://localhost:4000'
+      baseURL: process.env.REACT_APP_BACKEND_DOMAIN,
     })
   }
 
@@ -28,6 +28,26 @@ class AuthService {
     return this.auth.get('/auth/me')
     .then(response => response.data)
   }
+
+  getAllBooks() {
+    return this.auth.get('/api/books')
+    .then(response => response)
+  };
+
+  addOneBook(newBook) {
+    return this.auth.post(`/api/books/new`, newBook)
+    .then(response => response)
+  };
+
+  updateOneBook(id, updatedBook) {
+   return this.auth.put(`/api/books/${id}/update`, updatedBook)
+   .then(response => response)
+  };
+
+  deleteOneBook(id) {
+    return this.auth.delete(`/api/books/${id}/delete`)
+    .then(response => response)
+  };
 }
 
 const auth = new AuthService();

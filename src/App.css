@@ -89,7 +89,7 @@
 
 /* Position and sizing of burger button */
 .bm-burger-button {
-  position: fixed;
+  position: absolute;
   width: 36px;
   height: 30px;
   left: 36px;
@@ -119,13 +119,22 @@
   font-size: 1.15em;
 }
 
+.side-menu-container {
+  position: absolute;
+  height: 100vh;
+  left: 0px;
+}
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
   fill: #373a47;
 }
 
 /* Wrapper for item list */
-.bm-item-list {
+/* .bm-item-list {
+  color: #b8b7ad;
+} */
+
+.menu-item {
   color: #b8b7ad;
 }
 
@@ -136,7 +145,7 @@
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 22px;
 }
 
@@ -301,6 +310,10 @@
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
+}
+
+.new-book-form {
+  margin-top: -35px;
 }
 
 

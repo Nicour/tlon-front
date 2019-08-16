@@ -287,7 +287,7 @@
 }
 
 .book-img {
-  width: 112px;
+  width: 131px;
   height: 122px;
   margin: 5px;
 }
@@ -303,6 +303,17 @@
 }
 .book-container p {
   margin: 0;
+}
+
+.delete-img {
+  display: flex;
+  align-items: center;
+  height: 25px;
+  width: 20px;
+}
+
+.delete-img img {
+  margin: 204px 0 0 53px;
 }
 
 .book-info {

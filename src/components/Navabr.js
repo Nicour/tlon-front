@@ -1,34 +1,36 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
 import { slide as Menu } from "react-burger-menu";
+import withAuth from '../components/withAuth.js';
 
-export default props => {
-  return (
-    <div className="navbar">
-      <div className="side-menu-container">
-        <Menu {...props}>
-          <a className="menu-item" href="/private">
-            My profile
-          </a>
-          <a className="menu-item" href="/">
-            Favorites
-          </a>
-          <a className="menu-item" href="/">
-            My books
-          </a>
-          <Link to='/books/create'>
+class Navbar extends Component {
+  render() {
+    return (
+      <div className="navbar">
+        <div className="side-menu-container">
+          <Menu>
+            <a className="menu-item" href="/">
+              My profile
+            </a>
+            <a className="menu-item" href="/">
+              Favorites
+            </a>
+            <a className="menu-item" href="/">
+              My books
+            </a>
             <a className="menu-item" href="/books/create">
               Add new book
             </a>
-          </Link>
-          <a className="menu-item" href="/logout">
-            Logout
-          </a>
-        </Menu>
+            <a onClick={this.props.logout} className="menu-item" href="/logout">
+              Logout
+            </a>
+          </Menu>
+        </div>
+        <div>
+          <a href="/"><h1>TLÖN</h1></a>
+        </div>
       </div>
-      <div>
-        <h1>TLÖN</h1>
-      </div>
-    </div>
-  );
-};
+    );
+  };
+}
+
+export default withAuth(Navbar)

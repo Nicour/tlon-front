@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom";
 import withAuth from '../components/withAuth.js';
 import Navbar from '../components/Navabr'
 import auth from '../services/auth-service'
@@ -37,11 +36,6 @@ class Private extends Component {
         <div> 
           <Navbar pageWrapId={"page-wrap"} outerContainerId={"App"} />
           <section className="list-container">
-            {/* <Link to='/books/create'>
-              <button>
-                Create a new Book
-              </button>
-            </Link>  */}
             {books.length > 0 ? books.map((book) => {
               return (
                 <article key={book._id} className="book-container">
@@ -53,7 +47,9 @@ class Private extends Component {
                     <p>{book.author}</p>
                     <p>{book.editorial}</p>
                     <p>{book.category}</p>
-                    {/* <button onClick={() => {this.handleDeleteClick(book._id)}}>Delete</button> */}
+                  </div>
+                  <div className="delete-img">
+                  <img src="../../delete.png" alt="Delete Button" onClick={() => {this.handleDeleteClick(book._id)}}/>
                   </div>
                 </article>
               )

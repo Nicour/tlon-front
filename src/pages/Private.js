@@ -40,7 +40,7 @@ class Private extends Component {
               return (
                 <article key={book._id} className="book-container">
                   <div className="book-img">
-                    <img src={book.image} alt={book.name}/>
+                    <img src={book.image} alt="Book cover"/>
                   </div>
                   <div className="book-info">
                     <h4>{book.name}</h4>

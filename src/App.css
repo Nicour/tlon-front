@@ -250,7 +250,8 @@
   border: solid 1px #191a1b;
   background-color: rgba(255, 251, 251, 0.1);
   -webkit-animation: swing-in-top-fwd 1.3s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
-	animation: swing-in-top-fwd 1.3s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+  animation: swing-in-top-fwd 1.3s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+  position: relative;
 }
 
 @-webkit-keyframes swing-in-top-fwd {
@@ -287,7 +288,6 @@
 }
 
 .book-img {
-  width: 131px;
   height: 122px;
   margin: 5px;
 }
@@ -308,19 +308,20 @@
 .delete-img {
   display: flex;
   align-items: center;
-  height: 25px;
+  height: 20px;
   width: 20px;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
 }
 
-.delete-img img {
-  margin: 204px 0 0 53px;
-}
 
 .book-info {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
+  width: 215px;
 }
 
 .new-book-form {

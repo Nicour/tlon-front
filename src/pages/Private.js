@@ -38,20 +38,22 @@ class Private extends Component {
           <section className="list-container">
             {books.length > 0 ? books.map((book) => {
               return (
-                <article key={book._id} className="book-container">
-                  <div className="book-img">
-                    <img src={book.image} alt="Book cover"/>
-                  </div>
-                  <div className="book-info">
-                    <h4>{book.name}</h4>
-                    <p>{book.author}</p>
-                    <p>{book.editorial}</p>
-                    <p>{book.category}</p>
-                  </div>
-                  <div className="delete-img">
-                  <img src="../../delete.png" alt="Delete Button" onClick={() => {this.handleDeleteClick(book._id)}}/>
-                  </div>
-                </article>
+                <a href={`/books/${book._id}/update`} key={book._id} >
+                  <article className="book-container">
+                    <div className="book-img">
+                      <img src={book.image} alt="Book cover"/>
+                    </div>
+                    <div className="book-info">
+                      <h4>{book.name}</h4>
+                      <p>{book.author}</p>
+                      <p>{book.editorial}</p>
+                      <p>{book.category}</p>
+                    </div>
+                    <div className="delete-img">
+                    <img src="../../delete.png" alt="Delete Button" onClick={() => {this.handleDeleteClick(book._id)}}/>
+                    </div>
+                  </article>
+                </a>
               )
             }) : <div className="loader">Loading...</div>}
           </section>
@@ -59,13 +61,5 @@ class Private extends Component {
       );
     }
   }
-
-
-//       <div>
-//         <Navbar pageWrapId={"page-wrap"} outerContainerId={"App"} />
-//       </div>
-//     )
-//   }
-// }
 
 export default withAuth(Private);

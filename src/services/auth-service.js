@@ -35,6 +35,11 @@ class AuthService {
     .then(response => response)
   };
 
+  getOneBook(id) {
+    return this.auth.get(`/api/books/${id}/update`)
+    .then(response => response)
+  };
+
   addOneBook(newBook) {
     return this.auth.post(`/api/books/new`, newBook)
     .then(response => response)

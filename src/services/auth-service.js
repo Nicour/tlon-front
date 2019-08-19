@@ -36,18 +36,18 @@ class AuthService {
   };
 
   getOneBook(id) {
-    return this.auth.get(`/api/books/${id}/update`)
+    return this.auth.get(`/api/books/${id}`)
     .then(response => response)
+  };
+  
+  updateOneBook(id, updatedBook) {
+   return this.auth.put(`/api/books/${id}/update`, updatedBook)
+   .then(response => response)
   };
 
   addOneBook(newBook) {
     return this.auth.post(`/api/books/new`, newBook)
     .then(response => response)
-  };
-
-  updateOneBook(id, updatedBook) {
-   return this.auth.put(`/api/books/${id}/update`, updatedBook)
-   .then(response => response)
   };
 
   deleteOneBook(id) {

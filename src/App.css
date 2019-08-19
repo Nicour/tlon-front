@@ -305,6 +305,10 @@
   margin: 0;
 }
 
+.book-detail-a {
+  display: flex;
+}
+
 .delete-img {
   display: flex;
   align-items: center;

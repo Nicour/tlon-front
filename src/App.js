@@ -6,6 +6,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import AddBook from './pages/AddBook'
 import BookDetails from './pages/BookDetails'
+import UpdateBook from './pages/UpdateBook'
 import NotFound from './pages/NotFound'
 
 import AnonRoute from './components/AnonRoute'
@@ -27,8 +28,9 @@ class App extends Component {
               <AnonRoute path="/" exact component={Login} />
               <AnonRoute path="/logout" exact component={Login} />
               <PrivateRoute path="/private" exact component={Private} />
-              <PrivateRoute exact path="/books/create" component={AddBook}/>
-              <PrivateRoute exact path="/books/:id/update" component={BookDetails}/>
+              <PrivateRoute exact path="/books/create" component={AddBook}/>          
+              <PrivateRoute exact path="/books/:id" component={BookDetails}/>
+              <PrivateRoute exact path="/books/:id/update" component={UpdateBook}/>
               <Route exact component={NotFound}/>
             </Switch>
           </div>

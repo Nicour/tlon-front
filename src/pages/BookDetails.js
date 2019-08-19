@@ -17,7 +17,6 @@ export default class BookDetails extends Component {
 
   componentDidMount() {
     const id = this.props.match.params.id
-    console.log(id)
     auth.getOneBook(id)
       .then(response => {
         console.log(response)
@@ -33,10 +32,25 @@ export default class BookDetails extends Component {
   }
 
   render() {
+    const id = this.props.match.params.id
     return (
       <div> 
         <Navbar pageWrapId={"page-wrap"} outerContainerId={"App"} />
-       <h1>{this.state.name}</h1>
+        <article className="book-container">
+          <div className="book-img">
+            <img src={this.state.image} alt=""/>
+          </div>
+          <div className="book-info">
+            <h4>Title: {this.state.name}</h4>
+            <p>Author: {this.state.author}</p>
+            <p>Editorial: {this.state.editorial}</p>
+            <p>Caregory: {this.state.category}</p>
+            <p>Rating: {this.state.rating}/5</p>
+          </div>
+          <div className="delete-img">
+            <a href={`/books/${id}/update`}><img src="../../edit.png" alt="Edit Button"/></a>
+          </div>
+        </article> 
       </div>
     );
   }

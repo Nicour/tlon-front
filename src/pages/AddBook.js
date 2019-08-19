@@ -41,7 +41,7 @@ class AddBook extends Component {
 
 
   render() {
-    const {name, author, image, editorial, category, rating, redirect} = this.state;
+    const {name, author, image, editorial, category, redirect} = this.state;
     return (
       <>
         <Navbar pageWrapId={"page-wrap"} outerContainerId={"App"} />
@@ -63,14 +63,6 @@ class AddBook extends Component {
               <option value="Philosophy">Philosophy</option>
               <option value="Sociology">Sociology</option>
               <option value="History">History</option>
-            </select>
-            <label htmlFor="rating">Rating</label>
-            <select name="rating" onChange={this.handleOneChange} value={rating}>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
             </select>
             <button type="submit" className="button">Add new Book</button>
           </form>

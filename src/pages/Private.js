@@ -38,8 +38,8 @@ class Private extends Component {
           <section className="list-container">
             {books.length > 0 ? books.map((book) => {
               return (
-                <article className="book-container">
-                  <a href={`/books/${book._id}`} key={book._id} className='book-detail-a'>
+                <article className="book-container" key={book._id}>
+                  <a href={`/books/${book._id}`} className='book-detail-a'>
                     <div className="book-img">
                       <img src={book.image} alt="Book cover"/>
                     </div>
@@ -51,6 +51,7 @@ class Private extends Component {
                     </div>
                   </a>
                   <div className="delete-img">
+                    <img src="../../favorite.png" alt=""/>
                     <img src="../../delete.png" alt="Delete Button" onClick={() => {this.handleDeleteClick(book._id)}}/>
                   </div>
                 </article>

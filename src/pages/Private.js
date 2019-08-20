@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import withAuth from '../components/withAuth.js';
 import Navbar from '../components/Navabr'
 import auth from '../services/auth-service'
@@ -39,7 +40,7 @@ class Private extends Component {
             {books.length > 0 ? books.map((book) => {
               return (
                 <article className="book-container" key={book._id}>
-                  <a href={`/books/${book._id}`} className='book-detail-a'>
+                  <Link to={`/books/${book._id}`} className='book-detail-a'>
                     <div className="book-img">
                       <img src={book.image} alt="Book cover"/>
                     </div>
@@ -49,10 +50,10 @@ class Private extends Component {
                       <p>{book.editorial}</p>
                       <p>{book.category}</p>
                     </div>
-                  </a>
+                  </Link>
                   <div className="delete-img">
                     <img src="../../favorite.png" alt=""/>
-                    <img src="../../delete.png" alt="Delete Button" onClick={() => {this.handleDeleteClick(book._id)}}/>
+                    <img src="../../delete.png" alt="Delete Button" className="delete" onClick={() => {this.handleDeleteClick(book._id)}}/>
                   </div>
                 </article>
               )

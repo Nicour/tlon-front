@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { slide as Menu } from "react-burger-menu";
+import {Link} from 'react-router-dom'
 import withAuth from '../components/withAuth.js';
 
 class Navbar extends Component {
@@ -8,25 +9,25 @@ class Navbar extends Component {
       <div className="navbar">
         <div className="side-menu-container">
           <Menu>
-            <a className="menu-item" href="/">
+            <Link className="menu-item" to="/">
               My profile
-            </a>
-            <a className="menu-item" href="/">
+            </Link>
+            <Link className="menu-item" to="/">
               Favorites
-            </a>
-            <a className="menu-item" href="/">
+            </Link>
+            <Link className="menu-item" to="/">
               My books
-            </a>
-            <a className="menu-item" href="/books/create">
+            </Link>
+            <Link className="menu-item" to="/books/create">
               Add new book
-            </a>
-            <a onClick={this.props.logout} className="menu-item" href="/logout">
+            </Link>
+            <Link onClick={this.props.logout} className="menu-item" to="/">
               Logout
-            </a>
+            </Link>
           </Menu>
         </div>
         <div>
-          <a href="/"><h1>TLÖN</h1></a>
+          <Link to="/"><h1>TLÖN</h1></Link>
         </div>
       </div>
     );

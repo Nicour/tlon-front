@@ -39,6 +39,17 @@ class AuthService {
     return this.auth.get(`/api/books/${id}`)
     .then(response => response)
   };
+
+  addReview(id, newReview) {
+    return this.auth.post(`/api/books/${id}/addreview`, newReview)
+    .then(response => response)
+  };
+
+  getReviews(id) {
+    console.log(id)
+    return this.auth.get(`/api/books/${id}/reviews`)
+    .then(response => response)
+  };
   
   updateOneBook(id, updatedBook) {
    return this.auth.put(`/api/books/${id}/update`, updatedBook)

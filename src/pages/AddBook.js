@@ -12,7 +12,6 @@ class AddBook extends Component {
     editorial: '',
     image: '',
     category: 'Essay',
-    rating: null,
     redirect: false
   }
 
@@ -48,15 +47,15 @@ class AddBook extends Component {
         <div className="log-form">
           <form onSubmit={this.handleSubmit} className="new-book-form">
             <label htmlFor="name">Title</label>
-            <input type="text" id='name' onChange={this.handleOneChange} value={name} name='name'/>
+            <input type="text" id='name' onChange={this.handleOneChange} value={name} name='name' required/>
             <label htmlFor="author">Author</label>
-            <input type="text" id="author" onChange={this.handleOneChange} value={author} name='author'/>
+            <input type="text" id="author" onChange={this.handleOneChange} value={author} name='author' required/>
             <label htmlFor="price">Editorial</label>
-            <input type="text" id="editorial" onChange={this.handleOneChange} value={editorial} name='editorial'/>
+            <input type="text" id="editorial" onChange={this.handleOneChange} value={editorial} name='editorial' required/>
             <label htmlFor="image">Image</label>
-            <input type="text" id="image" onChange={this.handleOneChange} value={image} name='image'/>
+            <input type="text" id="image" onChange={this.handleOneChange} value={image} name='image' required/>
             <label htmlFor="category">Category</label>
-            <select name="category" onChange={this.handleOneChange} value={category}>
+            <select name="category" onChange={this.handleOneChange} value={category} required>
               <option value="Novel">Novel</option>
               <option value="Short story">Short story</option>
               <option value="Essay">Essay</option>

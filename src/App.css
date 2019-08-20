@@ -1,6 +1,7 @@
 * {
   font-family: 'Cormorant Garamond', serif;
   color: #191a1b;
+  text-align: center
 }
 
 
@@ -73,6 +74,7 @@
   display: inline-block;
   /* Our sidebar item styling */
   text-decoration: none;
+  text-align: left;
   margin-bottom: 10px;
   color: #d1d1d1;
   transition: color 0.2s;
@@ -240,18 +242,19 @@
 .list-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  align-items: center;
 }
 
 .book-container {
   display: flex;
   width: 80%;
-  margin: 0px 0px 15px 34px;
+  margin: 0px 0px 15px 0px;
   border: solid 1px #191a1b;
   background-color: rgba(255, 251, 251, 0.1);
   -webkit-animation: swing-in-top-fwd 1.3s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
   animation: swing-in-top-fwd 1.3s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
   position: relative;
+  border-radius: .4rem;
 }
 
 @-webkit-keyframes swing-in-top-fwd {
@@ -293,13 +296,12 @@
 }
 
 .book-img img {
-  width: 78px;
   height: 100%;
 }
 
 .book-container h4 {
   margin: 0;
-  font-weight: 400;
+  font-weight: 500;
 }
 .book-container p {
   margin: 0;
@@ -311,10 +313,15 @@
 
 .delete-img {
   display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 20px;
-    margin: 5px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 8%;
+  margin: 5px;
+}
+
+.delete {
+  width: 80%;
 }
 
 
@@ -328,6 +335,27 @@
 
 .new-book-form {
   margin-top: -35px;
+}
+
+.review {
+  width: 80%;
+  text-align: center
+}
+
+.review h4 {
+  margin: 10px 0 5px 0;
+}
+
+.review-form {
+  border: solid 1px #191a1b;
+  border-radius: .4rem;
+  height: 100%;
+  
+}
+
+.review .button {
+  background-color: #191a1b;
+  border: 0.1rem solid #191a1b;
 }
 
 

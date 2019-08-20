@@ -31,6 +31,7 @@ class App extends Component {
               <PrivateRoute exact path="/books/create" component={AddBook}/>          
               <PrivateRoute exact path="/books/:id" component={BookDetails}/>
               <PrivateRoute exact path="/books/:id/update" component={UpdateBook}/>
+              <PrivateRoute exact path="/books/:id/addreview" component={UpdateBook}/>
               <Route exact component={NotFound}/>
             </Switch>
           </div>

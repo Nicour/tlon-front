@@ -305,6 +305,7 @@
 }
 .book-container p {
   margin: 0;
+  width: 100%
 }
 
 .book-detail-a {
@@ -339,11 +340,14 @@
 
 .review {
   width: 80%;
-  text-align: center
+  text-align: center;
+  -webkit-animation: swing-in-top-fwd 1.3s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+  animation: swing-in-top-fwd 1.3s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
 }
 
 .review h4 {
   margin: 10px 0 5px 0;
+  font-weight: 500;
 }
 
 .review-form {
@@ -358,4 +362,16 @@
   border: 0.1rem solid #191a1b;
 }
 
+
+.reviews-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reviews-list h4 {
+  margin: 0px 0 5px 0;
+  font-weight: 500;
+}
 

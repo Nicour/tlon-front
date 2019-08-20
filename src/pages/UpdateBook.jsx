@@ -77,7 +77,7 @@ class UpdateBook extends Component {
             <button type="submit" className="button">Update book</button>
           </form>}
         
-          {redirect ? <Redirect to="/private"/> : null}
+          {redirect ? <Redirect to={``}/> : null}
         </div>
       </>
     )

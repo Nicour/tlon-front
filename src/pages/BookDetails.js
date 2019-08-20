@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Link, Redirect} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 import Navbar from '../components/Navabr'
 
@@ -31,15 +31,6 @@ export default class BookDetails extends Component {
           reviews: response.data.reviews,
         })
       })
-      auth.getReviews(id)
-      .then(response => {
-        console.log(response)
-        this.setState({
-          review: response.data
-        })
-       console.log('response frontend',response.data)
-       console.log(this.state.reviews)
-      })
   }
 
   handleOneChange = (event) => {
@@ -68,8 +59,7 @@ export default class BookDetails extends Component {
 
   render() {
     const id = this.props.match.params.id
-    console.log(id)
-    const {redirect} = this.state;
+    const {redirect, reviews} = this.state;
     return (
       <div> 
         <Navbar pageWrapId={"page-wrap"} outerContainerId={"App"} />
@@ -91,17 +81,19 @@ export default class BookDetails extends Component {
           </article> 
           <form onSubmit={this.handleSubmit} className="review">
             <h4>Add a review</h4>
-            <textarea name="review" id="review" cols="30" rows="10" className="review-form" onChange={this.handleOneChange}></textarea>
+            <textarea name="review" id="review" cols="30" rows="10" className="review-form" onChange={this.handleOneChange} placeholder="Write your review"></textarea>
             <button type="submit" className="button">Add your review</button>
           </form>
-          {redirect ? <Redirect to={`/books/${id}`}/> : null}
-          <section>
+          {redirect ? window.location.reload() : null}
+          <section className="reviews-list">
             <h4>Reviews</h4>
-            <section className="list-container">
-              <article className="book-container" key={this.state.reviews._id}>
-                <p>{this.state.reviews}</p>
-              </article>
-            </section>
+            {reviews.length > 0 ? reviews.map((oneReview) => {
+              return (
+                <article className="book-container" key={oneReview._id}>
+                  <p>{oneReview.review}</p>
+                </article>
+              )
+            }) : <div className="loader">Loading...</div>}
           </section>
       </section>
       </div>

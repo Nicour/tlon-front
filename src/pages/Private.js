@@ -47,8 +47,8 @@ class Private extends Component {
                     <div className="book-info">
                       <h4>{book.name}</h4>
                       <p>{book.author}</p>
-                      <p>{book.editorial}</p>
-                      <p>{book.category}</p>
+                      {/* <p>{book.editorial}</p>
+                      <p>{book.category}</p> */}
                     </div>
                   </Link>
                   <div className="delete-img">

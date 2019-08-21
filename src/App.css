@@ -126,15 +126,6 @@
   height: 100vh;
   left: 0px;
 }
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-  fill: #373a47;
-}
-
-/* Wrapper for item list */
-/* .bm-item-list {
-  color: #b8b7ad;
-} */
 
 .menu-item {
   color: #b8b7ad;
@@ -305,7 +296,8 @@
 }
 .book-container p {
   margin: 0;
-  width: 100%
+  width: 100%;
+  padding: 5px
 }
 
 .book-detail-a {
@@ -351,7 +343,6 @@
 }
 
 .review-form {
-  border: solid 1px #191a1b;
   border-radius: .4rem;
   height: 100%;
   

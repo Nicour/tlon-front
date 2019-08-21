@@ -73,6 +73,8 @@ class UpdateBook extends Component {
               <option value="Philosophy">Philosophy</option>
               <option value="Sociology">Sociology</option>
               <option value="History">History</option>
+              <option value="Poetry">Poetry</option>
+              <option value="Politics">Politics</option>
             </select>
             <button type="submit" className="button">Update book</button>
           </form>}

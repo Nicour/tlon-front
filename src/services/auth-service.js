@@ -46,7 +46,6 @@ class AuthService {
   };
 
   getReviews(id) {
-    console.log(id)
     return this.auth.get(`/api/books/${id}/reviews`)
     .then(response => response)
   };

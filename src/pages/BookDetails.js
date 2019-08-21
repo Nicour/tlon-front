@@ -4,8 +4,9 @@ import {Link} from 'react-router-dom'
 import Navbar from '../components/Navabr'
 
 import auth from '../services/auth-service'
+import withAuth from '../components/withAuth.js';
 
-export default class BookDetails extends Component {
+class BookDetails extends Component {
 
   state = {
     name: '',
@@ -81,7 +82,7 @@ export default class BookDetails extends Component {
           </article> 
           <form onSubmit={this.handleSubmit} className="review">
             <h4>Add a review</h4>
-            <textarea name="review" id="review" cols="30" rows="10" className="review-form" onChange={this.handleOneChange} placeholder="Write your review"></textarea>
+            <textarea name="review" id="review" cols="30" rows="10" className="review-form" onChange={this.handleOneChange} placeholder="Write your review" required></textarea>
             <button type="submit" className="button">Add your review</button>
           </form>
           {redirect ? window.location.reload() : null}
@@ -100,4 +101,6 @@ export default class BookDetails extends Component {
     );
   }
 }
+
+export default withAuth(BookDetails)
 

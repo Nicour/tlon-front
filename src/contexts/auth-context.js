@@ -63,18 +63,18 @@ class AuthProvider extends Component {
     return (
       <>
         {isLoading ? <div className="loader">Loading...</div>: (
-            <AuthContext.Provider value={ 
-              {
-                user,
-                isLoggedIn,
-                login: this.userLogin,
-                signup: this.userSignUp,
-                logout: this.userLogout
-              }
-            }>
-              {this.props.children}
-            </AuthContext.Provider>
-          )}
+          <AuthContext.Provider value={ 
+            {
+              user,
+              isLoggedIn,
+              login: this.userLogin,
+              signup: this.userSignUp,
+              logout: this.userLogout
+            }
+          }>
+          {this.props.children}
+          </AuthContext.Provider>
+        )}
       </>
     );
   }

@@ -88,6 +88,12 @@
 .bm-item:hover {
   color: white;
 }
+.bm-item.menu-item:focus{
+  outline: none;
+  outline-color: none;
+  color: #b8b7ad;
+
+}
 
 /* The rest copied directly from react-burger-menu docs */
 

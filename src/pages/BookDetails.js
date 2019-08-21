@@ -78,8 +78,8 @@ class BookDetails extends Component {
               <p>{this.state.category}</p>
             </div>
             <div className="delete-img">
-              <Link to={`/books/${id}/update`}><img src="../../icons8-lazo-marcapáginas-100.png" alt=""/></Link>
-              <img src="../../edit.png" alt="Edit Button"/>
+              <img src="../../icons8-lazo-marcapáginas-100.png" alt=""/>
+              <Link to={`/books/${id}/update`}><img src="../../edit.png" alt="Edit Button"/></Link>
             </div>
           </article> 
           <form onSubmit={this.handleSubmit} className="review">

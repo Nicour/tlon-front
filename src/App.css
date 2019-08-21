@@ -52,6 +52,8 @@
   flex-direction: column;
   text-align: center;
   margin: 60px 20px 20px 20px;
+  -webkit-animation: swing-in-top-fwd 1.3s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+  animation: swing-in-top-fwd 1.3s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
 }
 
 .log-form .button {
@@ -328,6 +330,8 @@
 
 .new-book-form {
   margin-top: -35px;
+  -webkit-animation: swing-in-top-fwd 1.3s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+  animation: swing-in-top-fwd 1.3s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
 }
 
 .review {
@@ -345,7 +349,6 @@
 .review-form {
   border-radius: .4rem;
   height: 100%;
-  
 }
 
 .review .button {

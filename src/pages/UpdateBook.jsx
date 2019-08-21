@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import auth from '../services/auth-service'
+import bookService from '../services/books-service'
+
 import Navbar from '../components/Navabr'
 
 import withAuth from '../components/withAuth';
@@ -14,7 +15,7 @@ class UpdateBook extends Component {
   
   componentDidMount(){
     const {id} = this.props.match.params
-    auth.getOneBook(id)
+    bookService.getOneBook(id)
       .then(book=>{
         for(let key in book.data){
           this.setState({[key]: book.data[key]})
@@ -36,7 +37,7 @@ class UpdateBook extends Component {
     const {name, author, image, editorial, category} = this.state;
     event.preventDefault();
     const {id} = this.props.match.params
-    auth.updateOneBook(id,{
+    bookService.updateOneBook(id,{
       name, author, image, editorial, category,
     })
       .then(response => {

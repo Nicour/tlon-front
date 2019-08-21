@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import auth from '../services/auth-service'
+import bookService from '../services/books-service'
 import Navbar from '../components/Navabr'
 
 import withAuth from '../components/withAuth';
@@ -25,7 +25,7 @@ class AddBook extends Component {
   handleSubmit = (event) => {
     const {name, author, image, editorial, category, rating} = this.state;
     event.preventDefault();
-    auth.addOneBook({
+    bookService.addOneBook({
       name, author, image, editorial, category, rating
     })
       .then(response => {

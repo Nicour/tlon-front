@@ -3,7 +3,9 @@ import {Link} from 'react-router-dom'
 
 import Navbar from '../components/Navabr'
 
-import auth from '../services/auth-service'
+import bookService from '../services/books-service'
+import reviewServide from '../services/review-service'
+
 import withAuth from '../components/withAuth.js';
 
 class BookDetails extends Component {
@@ -21,7 +23,7 @@ class BookDetails extends Component {
 
   componentDidMount() {
     const id = this.props.match.params.id
-    auth.getOneBook(id)
+    bookService.getOneBook(id)
       .then(response => {
         this.setState({
           name: response.data.name,
@@ -45,7 +47,7 @@ class BookDetails extends Component {
     const {review} = this.state;
     const {id} = this.props.match.params
     event.preventDefault();
-    auth.addReview(id, {
+    reviewServide.addReview(id, {
       review
     })
       .then(response => {

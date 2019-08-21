@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import withAuth from '../components/withAuth.js';
 import Navbar from '../components/Navabr'
-import auth from '../services/auth-service'
+import bookService from '../services/books-service'
 
 class Private extends Component {
 
@@ -11,7 +11,7 @@ class Private extends Component {
   };
 
   componentDidMount() {
-    auth.getAllBooks()
+    bookService.getAllBooks()
       .then(response => {
         this.setState({
           books: response.data.listOfBooks
@@ -20,7 +20,7 @@ class Private extends Component {
   }
 
   handleDeleteClick(id) {
-    auth.deleteOneBook(id)
+    bookService.deleteOneBook(id)
      .then(() => {
       const filteredBooks = this.state.books.filter((singleBook) => {
         return singleBook._id !== id
